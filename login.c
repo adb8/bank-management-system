@@ -1,4 +1,3 @@
-#include "functions.h"
 #include "globals.h"
 #include <stdbool.h>
 #include <stdio.h>
