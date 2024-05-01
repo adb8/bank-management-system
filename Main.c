@@ -5,15 +5,7 @@
 #include "globals.h"
 #include <windows.h>
 
-void seeAccountDetails() {
-    printf("To be implemented\n");
-    Sleep(2000);
-}
 void editAccount() {
-    printf("To be implemented\n");
-    Sleep(2000);
-}
-void deposit() {
     printf("To be implemented\n");
     Sleep(2000);
 }

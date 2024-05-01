@@ -2,7 +2,7 @@ CC=gcc
 CFLAGS=-I.
 
 DEPS = createAccount.h
-OBJ = Main.o createAccount.o menu.o login.o
+OBJ = Main.o createAccount.o menu.o login.o seeAccountDetails.o deposit.o
 
 
 %.o: %.c $(DEPS)

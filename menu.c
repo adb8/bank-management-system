@@ -9,15 +9,15 @@ void menu() {
     system("cls");
     system("cls");
     printf("BANK MANAGEMENT SYSTEM: MENU\n");
-    printf("Please select an option from below:\n");
+    printf("PLEASE SELECT AN OPTION FROM BELOW:\n");
     if (!isLoggedIn) {
-        printf("1. Create Account\n");
-        printf("2. Login\n");
-        printf("3. Exit\n");
-        printf("Enter your choice: ");
+        printf("1. CREATE ACCOUNT\n");
+        printf("2. LOGIN\n");
+        printf("3. EXIT\n");
+        printf("ENTER YOUR CHOICE: ");
         result = scanf("%d", &choice);
         while (result != 1 || choice < 1 || choice > 3) {
-            printf("Invalid choice. Please try again: ");
+            printf("INVALID INPUT. PLEASE TRY AGAIN: ");
             while (getchar() != '\n')
                 ;
             result = scanf("%d", &choice);
@@ -37,18 +37,18 @@ void menu() {
             break;
         }
     } else if (isLoggedIn) {
-        printf("1. See Account Details\n");
-        printf("2. Edit Account\n");
-        printf("3. Deposit\n");
-        printf("4. Withdraw\n");
-        printf("5. Transfer\n");
-        printf("6. Delete Account\n");
-        printf("7. Logout\n");
-        printf("8. Exit\n");
-        printf("Enter your choice: ");
+        printf("1. SEE ACCOUNT DETAILS\n");
+        printf("2. EDIT ACCOUNT DETAILS\n");
+        printf("3. DEPOSIT\n");
+        printf("4. WITHDRAW\n");
+        printf("5. TRANSFER\n");
+        printf("6. DELETE ACCOUNT\n");
+        printf("7. LOGOUT\n");
+        printf("8. EXIT\n");
+        printf("ENTER YOUR CHOICE: ");
         result = scanf("%d", &choice);
         while (result != 1 || choice < 1 || choice > 8) {
-            printf("Invalid choice. Please try again: ");
+            printf("INVALID INPUT. PLEASE TRY AGAIN: ");
             while (getchar() != '\n')
                 ;
             result = scanf("%d", &choice);
