@@ -1,16 +1,16 @@
 CC=gcc
 CFLAGS=-I.
 
-DEPS = createAccount.h
-OBJ = Main.o createAccount.o menu.o login.o seeAccountDetails.o updateBalance.o deleteAccount.o logout.o editAccount.o transfer.o
+DEPS = globals.h
+OBJ = main.o create_account.o menu.o login.o account_details.o update_balance.o delete_account.o logout.o edit_account.o transfer.o
 
 %.o: %.c $(DEPS)
 	$(CC) -c -o $@ $< $(CFLAGS)
 
-Main: $(OBJ)
+main: $(OBJ)
 	$(CC) -o $@ $^ $(CFLAGS)
 
 .PHONY: clean
 
 clean:
-	rm -f $(OBJ) Main
+	rm -f $(OBJ) main

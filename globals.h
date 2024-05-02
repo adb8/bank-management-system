@@ -26,13 +26,13 @@ extern bool isLoggedIn;
 extern bool isRunning;
 
 extern void menu();
-extern void createAccount();
-extern void seeAccountDetails();
-extern void editAccount();
+extern void create_account();
+extern void account_details();
+extern void edit_account();
 extern void login();
-extern void updateBalance(int type);
+extern void update_balance(int type);
 extern void transfer();
-extern void deleteAccount();
+extern void delete_account();
 extern void logout();
 
 #endif

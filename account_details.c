@@ -5,7 +5,7 @@
 #include <conio.h>
 #include "globals.h"
 
-void seeAccountDetails() {
+void account_details() {
     printf("BANK MANAGEMENT SYSTEM: ACCOUNT DETAILS\n");
     printf("NAME: %s\n", account.holder.name);
     printf("AGE: %d\n", account.holder.age);
@@ -17,7 +17,6 @@ void seeAccountDetails() {
     printf("ACCOUNT TYPE: %s\n", account.type);
     printf("BALANCE: %d\n", account.balance);
     printf("ACCOUNT NUMBER: %s\n", account.number);
-
     printf("PRESS ANY KEY TO CONTINUE...");
     _getch();
     system("cls");

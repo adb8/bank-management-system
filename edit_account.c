@@ -6,7 +6,7 @@
 #include <time.h>
 #include <windows.h>
 
-void editAccount() {
+void edit_account() {
     int c, result, index, choice;
     char ch;
     char name[100];

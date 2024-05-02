@@ -27,7 +27,7 @@ void menu() {
         }
         switch (choice) {
         case 1:
-            createAccount();
+            create_account();
             break;
         case 2:
             login();
@@ -58,22 +58,22 @@ void menu() {
         }
         switch (choice) {
         case 1:
-            seeAccountDetails();
+            account_details();
             break;
         case 2:
-            editAccount();
+            edit_account();
             break;
         case 3:
-            updateBalance(1);
+            update_balance(1);
             break;
         case 4:
-            updateBalance(2);
+            update_balance(2);
             break;
         case 5:
             transfer();
             break;
         case 6:
-            deleteAccount();
+            delete_account();
             break;
         case 7:
             logout();

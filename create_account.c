@@ -5,7 +5,7 @@
 #include <stdlib.h>
 #include <windows.h>
 
-void createAccount() {
+void create_account() {
     int c, choice, result;
     int index = 0;
     char ch;

@@ -1,38 +1,11 @@
 #include "globals.h"
+#include <conio.h>
 #include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <windows.h>
-#include <conio.h>
 
-void updateBalance(int type) {
-    int amount;
-    system("cls");
-    printf("BANK MANAGEMENT SYSTEM: %s\n", type == 1 ? "DEPOSIT" : "WITHDRAWAL");
-    printf("ENTER AMOUNT TO %s IN DOLLARS: ", type == 1 ? "DEPOSIT" : "WITHDRAW");
-
-    int result = scanf("%d", &amount);
-    while (result != 1 || amount < 0) {
-        printf("INVALID INPUT. PLEASE TRY AGAIN: ");
-        while (getchar() != '\n')
-            ;
-        result = scanf("%d", &amount);
-    }
-    if (type == 1) {
-        account.balance += amount;
-    } else if (type == 2) {
-        if (account.balance < amount) {
-            system("cls");
-            printf("BANK MANAGEMENT SYSTEM: %s\n", type == 1 ? "DEPOSIT" : "WITHDRAWAL");
-            printf("INSUFFICIENT BALANCE. WITHDRAWAL FAILED\n");
-            printf("PRESS ANY KEY TO CONTINUE...");
-            _getch();
-            system("cls");
-            return;
-        }
-        account.balance -= amount;
-    }
-
+void delete_account() {
     FILE *file = fopen("accounts.csv", "r");
     if (file == NULL) {
         printf("ERROR OPENING FILE. EXITING PROGRAM...\n");
@@ -47,7 +20,7 @@ void updateBalance(int type) {
 
     while (fscanf(file, "%[^,],%[^,],%[^,],%[^,],%[^,],%[^,],%[^,],%d,%d,%[^,],%[^,\n]\n", name, gender, address, email, accountType, race, phoneNumber, &age, &balance, accountNumber, password) != EOF) {
         if (strcmp(accountNumber, account.number) == 0) {
-            balance = account.balance;
+            continue;
         }
         sprintf(lines[lineCount], "%s,%s,%s,%s,%s,%s,%s,%d,%d,%s,%s\n", name, gender, address, email, accountType, race, phoneNumber, age, balance, accountNumber, password);
         lineCount++;
@@ -63,10 +36,23 @@ void updateBalance(int type) {
         fprintf(file, "%s", lines[i]);
     }
     fclose(file);
+    
+    isLoggedIn = false;
+    account.holder.name[0] = '\0';
+    account.holder.gender[0] = '\0';
+    account.holder.age = 0;
+    account.holder.address[0] = '\0';
+    account.holder.email[0] = '\0';
+    account.type[0] = '\0';
+    account.holder.race[0] = '\0';
+    account.holder.phoneNumber[0] = '\0';
+    account.balance = 0;
+    account.number[0] = '\0';
+    account.password[0] = '\0';
 
     system("cls");
-    printf("BANK MANAGEMENT SYSTEM: DEPOSIT\n");
-    printf("%s SUCCESSFUL. NEW BALANCE: %d\n", type == 1 ? "DEPOSIT" : "WITHDRAWAL", account.balance);
+    printf("BANK MANAGEMENT SYSTEM: ACCOUNT DELETION\n");
+    printf("ACCOUNT DELETION SUCCESSFUL\n");
     printf("PRESS ANY KEY TO CONTINUE...");
     _getch();
     system("cls");

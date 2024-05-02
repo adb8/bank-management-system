@@ -74,7 +74,7 @@ void login() {
         if (tokens[9] != NULL && strcmp(tokens[9], accountNumber) == 0) {
             if (strcmp(tokens[10], password) == 0) {
                 isLoggedIn = true;
-                getAccountInfo(tokens);
+                get_account_info(tokens);
                 printf("BANK MANAGEMENT SYSTEM: LOGIN\n");
                 printf("LOGIN SUCCESSFUL. PRESS ANY KEY TO CONTINUE...\n");
                 // printf("NAME: %s\n", account.holder.name);
@@ -104,7 +104,7 @@ void login() {
     return;
 }
 
-void getAccountInfo(char *tokens[20]) {
+void get_account_info(char *tokens[20]) {
     strcpy(account.holder.name, tokens[0]);
     strcpy(account.holder.gender, tokens[1]);
     strcpy(account.holder.address, tokens[2]);
