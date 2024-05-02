@@ -3,13 +3,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <windows.h>
+#include <conio.h>
 
-void deposit() {
+void updateBalance(int type) {
     int amount;
     system("cls");
-    printf("BANK MANAGEMENT SYSTEM: DEPOSIT\n");
+    printf("BANK MANAGEMENT SYSTEM: %s\n", type == 1 ? "DEPOSIT" : "WITHDRAWAL");
+    printf("ENTER AMOUNT TO %s IN DOLLARS: ", type == 1 ? "DEPOSIT" : "WITHDRAW");
 
-    printf("ENTER AMOUNT TO DEPOSIT IN DOLLARS: ");
     int result = scanf("%d", &amount);
     while (result != 1 || amount < 0) {
         printf("INVALID INPUT. PLEASE TRY AGAIN: ");
@@ -17,7 +18,20 @@ void deposit() {
             ;
         result = scanf("%d", &amount);
     }
-    account.balance += amount;
+    if (type == 1) {
+        account.balance += amount;
+    } else if (type == 2) {
+        if (account.balance < amount) {
+            system("cls");
+            printf("BANK MANAGEMENT SYSTEM: %s\n", type == 1 ? "DEPOSIT" : "WITHDRAWAL");
+            printf("INSUFFICIENT BALANCE. WITHDRAWAL FAILED\n");
+            printf("PRESS ANY KEY TO CONTINUE...");
+            _getch();
+            system("cls");
+            return;
+        }
+        account.balance -= amount;
+    }
 
     FILE *file = fopen("accounts.csv", "r");
     if (file == NULL) {
@@ -50,8 +64,11 @@ void deposit() {
     }
     fclose(file);
 
-    printf("DEPOSIT SUCCESSFUL. NEW BALANCE: %d\n", account.balance);
-    Sleep(2000);
+    system("cls");
+    printf("BANK MANAGEMENT SYSTEM: DEPOSIT\n");
+    printf("%s SUCCESSFUL. NEW BALANCE: %d\n", type == 1 ? "DEPOSIT" : "WITHDRAWAL", account.balance);
+    printf("PRESS ANY KEY TO CONTINUE...");
+    _getch();
     system("cls");
     return;
 }

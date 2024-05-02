@@ -5,27 +5,6 @@
 #include "globals.h"
 #include <windows.h>
 
-void editAccount() {
-    printf("To be implemented\n");
-    Sleep(2000);
-}
-void withdraw() {
-    printf("To be implemented\n");
-    Sleep(2000);
-}
-void transfer() {
-    printf("To be implemented\n");
-    Sleep(2000);
-}
-void deleteAccount() {
-    printf("To be implemented\n");
-    Sleep(2000);
-}
-void logout() {
-    printf("To be implemented\n");
-    Sleep(2000);
-}
-
 bool isLoggedIn = false;
 bool isRunning = true;
 struct Account account;

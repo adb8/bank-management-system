@@ -96,7 +96,7 @@ void login() {
     fclose(file);
     if (!isLoggedIn) {
         printf("BANK MANAGEMENT SYSTEM: LOGIN\n");
-        printf("LOGIN CANCELLED. PRESS ANY KEY TO CONTINUE...\n");
+        printf("LOGIN FAILED. PRESS ANY KEY TO CONTINUE...\n");
         _getch();
         system("cls");
         return;

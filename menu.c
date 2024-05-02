@@ -64,10 +64,10 @@ void menu() {
             editAccount();
             break;
         case 3:
-            deposit();
+            updateBalance(1);
             break;
         case 4:
-            withdraw();
+            updateBalance(2);
             break;
         case 5:
             transfer();

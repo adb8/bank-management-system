@@ -98,18 +98,7 @@ void createAccount() {
     }
     system("cls");
 
-    // printf("BANK MANAGEMENT SYSTEM: ACCOUNT CREATION\n");
-    // printf("CREATE A PASSWORD: ");
-    // fgets(password, sizeof(password), stdin);
-    // while (password[0] == '\n' || password[0] == ' ') {
-    //     printf("INVALID INPUT. PLEASE TRY AGAIN: ");
-    //     fgets(password, sizeof(password), stdin);
-    // }
-    // if (password[strlen(password) - 1] == '\n') {
-    //     password[strlen(password) - 1] = '\0';
-    // }
-    // system("cls");
-
+    printf("BANK MANAGEMENT SYSTEM: ACCOUNT CREATION\n");
     printf("CREATE YOUR PASSWORD: ");
     while (1) {
         ch = getch();
